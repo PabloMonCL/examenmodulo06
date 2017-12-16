@@ -1,0 +1,30 @@
+Tareas por hacer:
+
+Controlador:
+    Crear Objeto de coneccion dentro de la Clase Registro
+
+Modelo:
+    Crear Metodo apra convertir los datos a mostrar a objeto
+        toObjects()
+
+
+Vista:
+    Diseñar interfaz segun lo siguiente:
+        Ventana de agregar empleado con los siguientes campos:
+            codigo : TextField;
+            rut : TextField;
+            nombre : TextField;
+            apellido : TextField;
+            celular : TextField;
+            email : TextField;
+            sueldoBruto : TextField;
+            estCivil : ComboBox;
+            nomDepto : ComboBox;
+            Boton de Cancelar
+            Botn de Agregar Empleado
+
+
+        Menu de configuracion de los datos:
+            Agregar Departamento  : MenuItem
+            Cerrar : MenuItem
+        
