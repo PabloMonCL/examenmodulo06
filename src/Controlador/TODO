@@ -28,3 +28,5 @@ Vista:
             Agregar Departamento  : MenuItem
             Cerrar : MenuItem
         
+        Tabla Dentro de la Ventana Pricipal:
+            Columnas equivalentes a los datos de la ventana Agregar

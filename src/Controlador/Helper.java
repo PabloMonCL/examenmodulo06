@@ -1,11 +1,13 @@
-package taller1pablo;
+package Controlador;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
- *
+ *Clase para validar datos
+ * permite verificar si un dato esta dentro de un rango numerico
+ * permite vrificar si un dato String tenga un largo minimo
  * @author Pablo Montero
  */
 public class Helper {
@@ -13,7 +15,7 @@ public class Helper {
     private static List<Boolean> validaciones = new ArrayList<>();
     /**
      * 
-     * @param nombre Nombre del campo a validar tipo String
+     * @param nombre Nombre del campo a validar tipo String que aparecera en el mensaje del JOptionpane
      * @param dato Dato o valor a validar tipo String
      * @param largoMin largo minimo que debe tener el dato a ingresar
      * @param largoMax largo maximo que debe tener el dato a ingrear
@@ -48,7 +50,8 @@ public class Helper {
     
     /**
      * 
-     * @param nombre Nombre del campo a validar tipo int
+     * @param nombre Nombre del campo a validar tipo int que aparecera en el
+     * mensaje del JOptionpane
      * @param dato dato a valida tipo int
      * @param nroMin numero minimo que puede tomar dato 
      * @param nroMax numero maximo que puede tomar dato tipo int

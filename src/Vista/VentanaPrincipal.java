@@ -10,12 +10,19 @@ package Vista;
  * @author Pablo
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
-
+    private static VentanaPrincipal mainPrincipal = null;
     /**
      * Creates new form VentanaPrincipal
      */
-    public VentanaPrincipal() {
+    private VentanaPrincipal() {
         initComponents();
+    }
+    
+    public static VentanaPrincipal getInstance(){
+        if(mainPrincipal==null){
+            mainPrincipal = new VentanaPrincipal();
+        }
+        return mainPrincipal;
     }
 
     /**

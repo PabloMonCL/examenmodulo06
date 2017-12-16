@@ -15,11 +15,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        
-        //asdasdasdasd
-        
-        //Otra linea de sadsdasd
+        // TODO: Crear objeto principal de la ventana utilizando getInstance()
     }
     
 }
