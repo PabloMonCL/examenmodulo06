@@ -1,24 +1,40 @@
 Tareas por hacer:
 
 Vista:
-    Diseñar interfaz segun lo siguiente:
+    Ventana Principal:
         Ventana de agregar empleado con los siguientes campos:
-            codigo : TextField;
-            rut : TextField;
-            nombre : TextField;
-            apellido : TextField;
-            celular : TextField;
-            email : TextField;
-            sueldoBruto : TextField;
-            estCivil : ComboBox;
-            nomDepto : ComboBox;
-            Boton de Cancelar
-            Botn de Agregar Empleado
+            DONE:codigo : TextField;
+            DONE:rut : TextField;
+            DONE:nombre : TextField;
+            DONE:apellido : TextField;
+            DONE:celular : TextField;
+            DONE:email : TextField;
+            DONE:sueldoBruto : TextField;
+            DONE:estCivil : ComboBox;
+            DONE:nomDepto : ComboBox;
+            DONE:Boton de Cancelar
+            DONE:Botn de Agregar Empleado
 
+            Metodo para el boton limpiar -> borrar todos los datos y poner focus en el textfield del codigo
+            Metodo para el boton agregar -> nueva instancia de la ventana agregar mediante getInstance() //singleton
+            Metodo para el boton modificar -> nueva instancia de la ventana modificar mediante getInstance() //singleton
+            
+            DONE: Tabla Dentro de la Ventana Pricipal:
+                DONE: Columnas equivalentes a los datos de la ventana Agregar
 
-        Menu de configuracion de los datos:
+            Menu de configuracion de los datos:
+                Agregar Departamento  : MenuItem
+                Cerrar : MenuItem
+    
+
+    Ventana Agregar
+        Iconos de los botones
+
+        Asignar metodo agregar 
+    
+    Ventana Modificar
+    
             Agregar Departamento  : MenuItem
             Cerrar : MenuItem
         
-        Tabla Dentro de la Ventana Pricipal:
-            Columnas equivalentes a los datos de la ventana Agregar
+        

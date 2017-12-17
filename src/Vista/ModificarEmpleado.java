@@ -10,12 +10,19 @@ package Vista;
  * @author Pablo
  */
 public class ModificarEmpleado extends javax.swing.JFrame {
-
+    private static ModificarEmpleado ventana = null;
     /**
      * Creates new form ModificarEmpleado
      */
-    public ModificarEmpleado() {
+    private ModificarEmpleado() {
         initComponents();
+    }
+    
+    public static ModificarEmpleado getInstance(){
+        if(ventana==null){
+            ventana = new ModificarEmpleado();
+        }
+        return ventana;
     }
 
     /**
@@ -50,9 +57,14 @@ public class ModificarEmpleado extends javax.swing.JFrame {
         jCBEstCivil = new javax.swing.JComboBox<>();
         jCBDepartamento = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jBCancelar.setText("Cancelar");
+        jBCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCancelarActionPerformed(evt);
+            }
+        });
 
         jBModificar.setText("Modificar");
 
@@ -222,6 +234,11 @@ public class ModificarEmpleado extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCancelarActionPerformed
+        this.dispose();
+        ventana = null;
+    }//GEN-LAST:event_jBCancelarActionPerformed
 
     /**
      * @param args the command line arguments
