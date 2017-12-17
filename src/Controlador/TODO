@@ -1,13 +1,5 @@
 Tareas por hacer:
 
-Controlador:
-    Crear Objeto de coneccion dentro de la Clase Registro
-
-Modelo:
-    Crear Metodo apra convertir los datos a mostrar a objeto
-        toObjects()
-
-
 Vista:
     Diseñar interfaz segun lo siguiente:
         Ventana de agregar empleado con los siguientes campos:
