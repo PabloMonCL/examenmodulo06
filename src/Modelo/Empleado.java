@@ -13,6 +13,11 @@ public class Empleado {
 
     public Empleado() {
     }
+    
+    public Object[] toObjects(){
+        Object[] objetos = new Object[]{codigo,rut,nombre,apellido,celular,email,sueldoBruto,estCivil,nomDepto};
+        return objetos;
+    }
 
     public int getCodigo() {
         return codigo;

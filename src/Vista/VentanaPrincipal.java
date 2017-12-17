@@ -16,8 +16,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     private VentanaPrincipal() {
         initComponents();
+        this.setVisible(true);
     }
     
+    /**
+     * Patron singleton de la ventana principal
+     * @return retorna una instancia de la VentanaPrincipal si es que no existe
+     */
     public static VentanaPrincipal getInstance(){
         if(mainPrincipal==null){
             mainPrincipal = new VentanaPrincipal();

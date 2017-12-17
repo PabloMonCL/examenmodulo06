@@ -5,6 +5,8 @@
  */
 package Controlador;
 
+import Vista.VentanaPrincipal;
+
 /**
  *
  * @author Pablo
@@ -15,7 +17,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO: Crear objeto principal de la ventana utilizando getInstance()
+        VentanaPrincipal.getInstance();
     }
     
 }
