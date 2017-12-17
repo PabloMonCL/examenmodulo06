@@ -25,6 +25,12 @@ public class Empleado {
         this.estCivil = estCivil;
         this.nomDepto = nomDepto;
     }
+
+    @Override
+    public String toString() {
+        String out = codigo+ rut+ nombre+ apellido+ celular+ email+ sueldoBruto+ estCivil+ nomDepto;
+        return  out;
+    }
     
     
     
