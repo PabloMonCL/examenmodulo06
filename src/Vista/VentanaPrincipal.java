@@ -10,7 +10,7 @@ package Vista;
  * @author Pablo
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
-    private static VentanaPrincipal mainPrincipal = null;
+    private static VentanaPrincipal mainPrincipal = null;//parte principal del patron sigleton
     /**
      * Creates new form VentanaPrincipal
      */
