@@ -13,6 +13,20 @@ public class Empleado {
 
     public Empleado() {
     }
+
+    public Empleado(int codigo, String rut, String nombre, String apellido, int celular, String email, int sueldoBruto, String estCivil, String nomDepto) {
+        this.codigo = codigo;
+        this.rut = rut;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.celular = celular;
+        this.email = email;
+        this.sueldoBruto = sueldoBruto;
+        this.estCivil = estCivil;
+        this.nomDepto = nomDepto;
+    }
+    
+    
     
     public Object[] toObjects(){
         Object[] objetos = new Object[]{codigo,rut,nombre,apellido,celular,email,sueldoBruto,estCivil,nomDepto};

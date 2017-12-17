@@ -5,6 +5,8 @@
  */
 package Controlador;
 
+import Modelo.Empleado;
+
 /**
  *
  * @author Pablo
@@ -18,6 +20,9 @@ public class Main {
     public static void main(String[] args) {
         //VentanaPrincipal.getInstance();
         Registro.registro.testConexion();
+        //Empleado empleado = new Empleado(100, "163591340", "pablo", "montero", 62057863, "pablo@gmail.com", 1200000, "c", "Diseño");
+        //Registro.registro.agregarEmpleado(empleado);
+        Registro.registro.buscarByCodigo("101");
     }
     
 }
