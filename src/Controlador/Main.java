@@ -5,19 +5,19 @@
  */
 package Controlador;
 
-import Vista.VentanaPrincipal;
-
 /**
  *
  * @author Pablo
  */
 public class Main {
 
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        VentanaPrincipal.getInstance();
+        //VentanaPrincipal.getInstance();
+        Registro.registro.testConexion();
     }
     
 }
