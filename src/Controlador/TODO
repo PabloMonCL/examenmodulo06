@@ -3,25 +3,14 @@ Tareas por hacer:
 Vista:
     Ventana Principal:
         Ventana de agregar empleado con los siguientes campos:
-            DONE:codigo : TextField;
-            DONE:rut : TextField;
-            DONE:nombre : TextField;
-            DONE:apellido : TextField;
-            DONE:celular : TextField;
-            DONE:email : TextField;
-            DONE:sueldoBruto : TextField;
-            DONE:estCivil : ComboBox;
-            DONE:nomDepto : ComboBox;
-            DONE:Boton de Cancelar
-            DONE:Botn de Agregar Empleado
 
+            Crear obtejo registro como atributo de la ventana principal:
+                ejemplo. Registro registro = new Registro();
+                para poder acceder desde los eventos a los metodos.
             Metodo para el boton limpiar -> borrar todos los datos y poner focus en el textfield del codigo
             Metodo para el boton agregar -> nueva instancia de la ventana agregar mediante getInstance() //singleton
             Metodo para el boton modificar -> nueva instancia de la ventana modificar mediante getInstance() //singleton
             
-            DONE: Tabla Dentro de la Ventana Pricipal:
-                DONE: Columnas equivalentes a los datos de la ventana Agregar
-
             Menu de configuracion de los datos:
                 Agregar Departamento  : MenuItem
                 Cerrar : MenuItem
@@ -30,11 +19,22 @@ Vista:
     Ventana Agregar
         Iconos de los botones
 
-        Asignar metodo agregar 
+            Crear obtejo registro como atributo de la ventana agregar:
+                ejemplo. Registro registro = new Registro();
+                para poder acceder desde los eventos a los metodos.
+
+        Metodo boton agregar ->     utilizar los datos de los textFields para crear un objeto Empleado utilizando los setters para cada atriubuto
+                                    pasar el objeto creado como argumento al metodo agregarEmpleado()
     
     Ventana Modificar
     
-            Agregar Departamento  : MenuItem
-            Cerrar : MenuItem
+        Crear obtejo registro como atributo de la ventana Modificar:
+            ejemplo. Registro registro = new Registro();
+            para poder acceder desde los eventos a los metodos.
+
+        Metodo boton agregar ->     utilizar los datos de los textFields para crear un objeto Empleado utilizando los setters para cada atriubuto
+                                    pasar el objeto creado como argumento al metodo modificarEmpleado()
+            
+            
         
         
