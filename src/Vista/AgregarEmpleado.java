@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.Helper;
 import Controlador.Registro;
 import Modelo.Empleado;
 
@@ -14,12 +15,12 @@ import Modelo.Empleado;
  */
 public class AgregarEmpleado extends javax.swing.JFrame {
     
+    Registro registro = new Registro();
+    
     private static AgregarEmpleado ventana = null;
     /**
      * Creates new form Empleado
      */
-    
-    Registro registro = new Registro();
     
     private AgregarEmpleado() {
         initComponents();
@@ -135,7 +136,7 @@ public class AgregarEmpleado extends javax.swing.JFrame {
 
         jCBEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elija una opcion", "Casado", "Soltero", "Viudo" }));
 
-        jCBDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elija una opcion", "Finanzas", "Redes", "Diseño", "Desarrollo", "Innovacion", "Procesos" }));
+        jCBDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elija una opcion", "Finanzas", "Redes", "Informatica", "Administracion", "Bienestar" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -253,6 +254,17 @@ public class AgregarEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jBCancelarActionPerformed
 
     private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
+        Helper.limpiar();
+        Helper.validaInt("Codigo", jTFCodigo.getText(), 1, 99, true);
+        Helper.validaString("Rut", jTFRut.getText(), 3, 9, true);
+        Helper.validaString("Nombre", jTFNombre.getText(), 3, 50, true);
+        Helper.validaString("Apellido", jTFApellido.getText(), 3, 50, true);
+        Helper.validaInt("Celular", jTFCelular.getText(), 100000000, 999999999, true);
+        Helper.validaString("Email", jTFEmail.getText(), 3, 50, true);
+        Helper.validaInt("Sueldo", jTFSueldo.getText(), 1, 5000000, true);
+        
+        
+        
         Empleado empleado = new Empleado();
         empleado.setCodigo(Integer.parseInt(jTFCodigo.getText()));
         empleado.setRut(jTFRut.getText());
@@ -260,6 +272,11 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         empleado.setApellido(jTFApellido.getText());
         empleado.setCelular(Integer.parseInt(jTFCelular.getText()));
         empleado.setEmail(jTFEmail.getText());
+        empleado.setSueldoBruto(Integer.parseInt(jTFSueldo.getText()));
+        empleado.setEstCivil(jCBEstCivil.getItemAt(jCBEstCivil.getSelectedIndex()));
+        empleado.setNomDepto(jCBDepartamento.getItemAt(jCBDepartamento.getSelectedIndex()));
+        
+        registro.agregarEmpleado(empleado);
         
         
     }//GEN-LAST:event_jBAgregarActionPerformed
