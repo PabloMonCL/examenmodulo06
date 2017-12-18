@@ -240,8 +240,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jBAgregarActionPerformed
 
     private void jBModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBModificarActionPerformed
-        ModificarEmpleado.getInstance();
-        ModificarEmpleado.getInstance().setVisible(true);
+        String codMod = JOptionPane.showInputDialog(null,"Ingrese codigo a Modificar");
+        ModificarEmpleado.getInstance(registro.getEmpleado(codMod));
+        
     }//GEN-LAST:event_jBModificarActionPerformed
 
     private void jMCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMCerrarActionPerformed
