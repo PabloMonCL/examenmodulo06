@@ -199,6 +199,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Limpiar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBLimpiarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jBCancelar">
               <Properties>
@@ -218,6 +221,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Agregar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBAgregarActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -284,10 +290,10 @@
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+                <StringItem index="0" value="Elija una opcion"/>
+                <StringItem index="1" value="Casado"/>
+                <StringItem index="2" value="Soltero"/>
+                <StringItem index="3" value="Viudo"/>
               </StringArray>
             </Property>
           </Properties>
@@ -298,11 +304,14 @@
         <Component class="javax.swing.JComboBox" name="jCBDepartamento">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="7">
+                <StringItem index="0" value="Elija una opcion"/>
+                <StringItem index="1" value="Finanzas"/>
+                <StringItem index="2" value="Redes"/>
+                <StringItem index="3" value="Dise&#xf1;o"/>
+                <StringItem index="4" value="Desarrollo"/>
+                <StringItem index="5" value="Innovacion"/>
+                <StringItem index="6" value="Procesos"/>
               </StringArray>
             </Property>
           </Properties>

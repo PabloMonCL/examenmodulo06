@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.Registro;
+import Modelo.Empleado;
 
 /**
  *
@@ -68,6 +69,11 @@ public class AgregarEmpleado extends javax.swing.JFrame {
 
         jBLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Broom_48px.png"))); // NOI18N
         jBLimpiar.setText("Limpiar");
+        jBLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBLimpiarActionPerformed(evt);
+            }
+        });
 
         jBCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Cancel_48px_1.png"))); // NOI18N
         jBCancelar.setText("Cancelar");
@@ -79,6 +85,11 @@ public class AgregarEmpleado extends javax.swing.JFrame {
 
         jBAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Plus_48px.png"))); // NOI18N
         jBAgregar.setText("Agregar");
+        jBAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAgregarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -122,9 +133,9 @@ public class AgregarEmpleado extends javax.swing.JFrame {
 
         jLabel9.setText("Departamento");
 
-        jCBEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elija una opcion", "Casado", "Soltero", "Viudo" }));
 
-        jCBDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elija una opcion", "Finanzas", "Redes", "Diseño", "Desarrollo", "Innovacion", "Procesos" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -240,6 +251,31 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         this.dispose();
         ventana = null;
     }//GEN-LAST:event_jBCancelarActionPerformed
+
+    private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
+        Empleado empleado = new Empleado();
+        empleado.setCodigo(Integer.parseInt(jTFCodigo.getText()));
+        empleado.setRut(jTFRut.getText());
+        empleado.setNombre(jTFNombre.getText());
+        empleado.setApellido(jTFApellido.getText());
+        empleado.setCelular(Integer.parseInt(jTFCelular.getText()));
+        empleado.setEmail(jTFEmail.getText());
+        
+        
+    }//GEN-LAST:event_jBAgregarActionPerformed
+
+    private void jBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpiarActionPerformed
+        jTFCodigo.setText("");
+        jTFRut.setText("");
+        jTFNombre.setText("");
+        jTFApellido.setText("");
+        jTFCelular.setText("");
+        jTFEmail.setText("");
+        jTFSueldo.setText("");
+        jCBEstCivil.setSelectedIndex(0);
+        jCBDepartamento.setSelectedIndex(0);
+        jTFCodigo.requestFocus();
+    }//GEN-LAST:event_jBLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
