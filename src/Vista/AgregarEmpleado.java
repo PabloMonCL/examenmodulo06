@@ -254,6 +254,19 @@ public class AgregarEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_jBCancelarActionPerformed
 
     private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
+        String estadoCivil = "",nomDepto = "";
+        if(jCBEstCivil.getItemAt(jCBEstCivil.getSelectedIndex()).equalsIgnoreCase("elija una opcion")){
+            estadoCivil = "";
+        }else {
+            estadoCivil = jCBEstCivil.getItemAt(jCBEstCivil.getSelectedIndex()).substring(1,1);
+        }
+        
+        if(jCBDepartamento.getItemAt(jCBDepartamento.getSelectedIndex()).equalsIgnoreCase("elija una opcion")){
+            nomDepto = "";
+        }else {
+            nomDepto = jCBDepartamento.getItemAt(jCBDepartamento.getSelectedIndex());
+        }
+        
         Helper.limpiar();
         Helper.validaInt("Codigo", jTFCodigo.getText(), 1, 99, true);
         Helper.validaString("Rut", jTFRut.getText(), 3, 9, true);
@@ -262,21 +275,23 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         Helper.validaInt("Celular", jTFCelular.getText(), 100000000, 999999999, true);
         Helper.validaString("Email", jTFEmail.getText(), 3, 50, true);
         Helper.validaInt("Sueldo", jTFSueldo.getText(), 1, 5000000, true);
+        Helper.validaString("Estado Civil", estadoCivil, 1, 30, true);
+        Helper.validaString("Departamento", nomDepto, 3, 30, true);
         
-        
-        
-        Empleado empleado = new Empleado();
-        empleado.setCodigo(Integer.parseInt(jTFCodigo.getText()));
-        empleado.setRut(jTFRut.getText());
-        empleado.setNombre(jTFNombre.getText());
-        empleado.setApellido(jTFApellido.getText());
-        empleado.setCelular(Integer.parseInt(jTFCelular.getText()));
-        empleado.setEmail(jTFEmail.getText());
-        empleado.setSueldoBruto(Integer.parseInt(jTFSueldo.getText()));
-        empleado.setEstCivil(jCBEstCivil.getItemAt(jCBEstCivil.getSelectedIndex()));
-        empleado.setNomDepto(jCBDepartamento.getItemAt(jCBDepartamento.getSelectedIndex()));
-        
-        registro.agregarEmpleado(empleado);
+        if(Helper.verificaciones()){
+            Empleado empleado = new Empleado();
+            empleado.setCodigo(Integer.parseInt(jTFCodigo.getText()));
+            empleado.setRut(jTFRut.getText());
+            empleado.setNombre(jTFNombre.getText());
+            empleado.setApellido(jTFApellido.getText());
+            empleado.setCelular(Integer.parseInt(jTFCelular.getText()));
+            empleado.setEmail(jTFEmail.getText());
+            empleado.setSueldoBruto(Integer.parseInt(jTFSueldo.getText()));
+            empleado.setEstCivil(jCBEstCivil.getItemAt(jCBEstCivil.getSelectedIndex()));
+            empleado.setNomDepto(jCBDepartamento.getItemAt(jCBDepartamento.getSelectedIndex()));
+
+            registro.agregarEmpleado(empleado);
+        }
         
         
     }//GEN-LAST:event_jBAgregarActionPerformed
