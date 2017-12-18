@@ -305,6 +305,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }else{
             mostrarBusqueda(buscado);
         }
+        jTFBuscar.setText("");
     }//GEN-LAST:event_jBBuscarActionPerformed
 
     private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
