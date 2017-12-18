@@ -6,6 +6,7 @@
 package Vista;
 
 import Controlador.Registro;
+import Modelo.Empleado;
 
 /**
  *
@@ -19,13 +20,35 @@ public class ModificarEmpleado extends javax.swing.JFrame {
     
     Registro registro = new Registro();
     
-    private ModificarEmpleado() {
+    private ModificarEmpleado(Empleado empleado) {
         initComponents();
+        setVisible(true);
+        int indexCiv = 0;
+        if (empleado.getEstCivil().equalsIgnoreCase("c")){
+            indexCiv = 1;
+        }
+        if (empleado.getEstCivil().equalsIgnoreCase("s")){
+            indexCiv = 2;
+        }
+        if (empleado.getEstCivil().equalsIgnoreCase("v")){
+            indexCiv = 3;
+        }
+        
+        jTFCodigo.setText(String.valueOf(empleado.getCodigo()));
+        jTFRut.setText(empleado.getRut());
+        jTFNombre.setText(empleado.getNombre());
+        jTFApellido.setText(empleado.getApellido());
+        jTFCelular.setText(String.valueOf(empleado.getCelular()));
+        jTFEmail.setText(empleado.getEmail());
+        jTFSueldo.setText(String.valueOf(empleado.getSueldoBruto()));
+        jCBEstCivil.setSelectedIndex(indexCiv);
+        jCBDepartamento.setSelectedItem(empleado.getNomDepto());
+        jTFCodigo.setEditable(false);
     }
     
-    public static ModificarEmpleado getInstance(){
+    public static ModificarEmpleado getInstance(Empleado empleado){
         if(ventana==null){
-            ventana = new ModificarEmpleado();
+            ventana = new ModificarEmpleado(empleado);
         }
         return ventana;
     }
@@ -114,9 +137,9 @@ public class ModificarEmpleado extends javax.swing.JFrame {
 
         jLabel9.setText("Departamento");
 
-        jCBEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elija una opcion", "Casado", "Soltero", "Viudo" }));
 
-        jCBDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCBDepartamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elija una opcion", "Finanzas", "Redes", "Informatica", "Administracion", "Bienestar" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -261,7 +284,6 @@ public class ModificarEmpleado extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ModificarEmpleado().setVisible(true);
             }
         });
     }
