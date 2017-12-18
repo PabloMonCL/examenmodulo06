@@ -290,8 +290,12 @@ public class AgregarEmpleado extends javax.swing.JFrame {
             empleado.setSueldoBruto(Integer.parseInt(jTFSueldo.getText()));
             empleado.setEstCivil(estadoCivil);
             empleado.setNomDepto(nomDepto);
-            registro.agregarEmpleado(empleado);
-            JOptionPane.showMessageDialog(this, "Empleado Agregado");
+            if(registro.agregarEmpleado(empleado)){
+                JOptionPane.showMessageDialog(this, "Empleado Agregado");
+            }else{
+                JOptionPane.showMessageDialog(this, "No agregado - Error: codigo duplicado ");
+                
+            }
         }
         
         
