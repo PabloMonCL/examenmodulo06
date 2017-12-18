@@ -12,7 +12,9 @@ CREATE TABLE EMPLEADOS
     ); 
 
 
-INSERT INTO EMPLEADOS VALUES(
+INSERT INTO EMPLEADOS VALUES(1,'176740469','Cristian','Montero',956522644,'cmontero.capo@gmail.com',120000,'S','Redes');
+INSERT INTO EMPLEADOS VALUES(2,'163591340','Pablo','Montero',956522644,'pablo.montero.c@gmail.com',220000,'C','Informatica');
+
   
 /*
 CREATE TABLE "USUARIO01"."EMPLEADOS" 

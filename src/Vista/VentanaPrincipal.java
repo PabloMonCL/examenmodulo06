@@ -41,12 +41,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         String[] columnas = new String[]{"Codigo","Rut","Nombre","Apellido","Celular","Email","Sueldo","Est. Civil","Departamento"};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
         modelo.setDataVector(registro.listarTodo(), columnas);
+        jTRegistro.setModel(modelo);
     }
     
     public void mostrarRegistroDepartamento(String depto){
         String[] columnas = new String[]{"Codigo","Rut","Nombre","Apellido","Celular","Email","Sueldo","Est. Civil","Departamento"};
         DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
         modelo.setDataVector(registro.listarByDepto(depto), columnas);
+        jTRegistro.setModel(modelo);
+    }
+    
+    public void mostrarBusqueda(String cod){
+        String[] columnas = new String[]{"Codigo","Rut","Nombre","Apellido","Celular","Email","Sueldo","Est. Civil","Departamento"};
+        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
+        modelo.setDataVector(registro.listarByCodigo(cod), columnas);
+        jTRegistro.setModel(modelo);
     }
     
     
@@ -76,6 +85,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMCerrar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -128,6 +142,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         jBBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Find_User_Male_48px.png"))); // NOI18N
+        jBBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBBuscarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -206,6 +225,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
@@ -224,11 +244,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jBElim120ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBElim120ActionPerformed
         registro.eliminarBySueldo("120000");
+        mostrarRegistro();
     }//GEN-LAST:event_jBElim120ActionPerformed
 
     private void jBSueldo10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSueldo10ActionPerformed
         registro.modificarTodosSueldos("10");
+        mostrarRegistro();
     }//GEN-LAST:event_jBSueldo10ActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        mostrarRegistro();
+    }//GEN-LAST:event_formWindowActivated
+
+    private void jBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarActionPerformed
+        String buscado = "";
+        buscado = jTFBuscar.getText();
+        mostrarBusqueda(buscado);
+    }//GEN-LAST:event_jBBuscarActionPerformed
 
     /**
      * @param args the command line arguments

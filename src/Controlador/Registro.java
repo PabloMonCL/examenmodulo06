@@ -177,6 +177,40 @@ public class Registro {
             return null;
         }
     }
+    public Object[][] listarByCodigo(String cod) {
+        Object[][] listaEmpleados = null;
+        List<Empleado> tempEmpleado = new ArrayList<>();
+        List<Object[]> tempObject = new ArrayList<>();
+        String select = "select * from empleados where codigo = '"+cod+"'";
+        try (
+                Connection conexion = DriverManager.getConnection(url, user, pass);
+                Statement ps = conexion.createStatement()) {
+
+            ResultSet rs = ps.executeQuery(select);
+            while (rs.next()) {
+                Empleado empleado = new Empleado();
+                empleado.setCodigo(rs.getInt("codigo"));
+                empleado.setRut(rs.getString("rut"));
+                empleado.setNombre(rs.getString("nombre"));
+                empleado.setApellido(rs.getString("apellido"));
+                empleado.setCelular(rs.getInt("celular"));
+                empleado.setEmail(rs.getString("email"));
+                empleado.setSueldoBruto(rs.getInt("sueldo_bruto"));
+                empleado.setEstCivil(rs.getString("est_civil"));
+                empleado.setNomDepto(rs.getString("nom_depto"));
+                tempEmpleado.add(empleado);
+            }
+
+            tempEmpleado.forEach(e -> tempObject.add(e.toObjects()));
+            listaEmpleados = new Object[tempEmpleado.size()][1];
+            listaEmpleados = tempObject.toArray(listaEmpleados);
+            System.out.println("Listar con exito " + listaEmpleados.toString());
+            return listaEmpleados;
+        } catch (SQLException e) {
+            System.out.println("Error en listarTodo " + e);
+            return null;
+        }
+    }
     /**
      * permite obtener la informacion de un registro de la base de datos
      * en una instancia de Empleado
