@@ -70,6 +70,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jMIMostrarTodo = new javax.swing.JMenuItem();
+        jMenuFiltrar = new javax.swing.JMenu();
+        jMRedes = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTRegistro = new javax.swing.JTable();
@@ -84,6 +88,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         jMAgregarDepto = new javax.swing.JMenuItem();
         jMCerrar = new javax.swing.JMenuItem();
+
+        jMIMostrarTodo.setText("Mostrar todo");
+        jMIMostrarTodo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIMostrarTodoActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(jMIMostrarTodo);
+
+        jMenuFiltrar.setText("Filtrar");
+
+        jMRedes.setText("Redes");
+        jMenuFiltrar.add(jMRedes);
+
+        jPopupMenu1.add(jMenuFiltrar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -110,6 +129,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTRegistro.setComponentPopupMenu(jPopupMenu1);
         jScrollPane1.setViewportView(jTRegistro);
 
         jBAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Add_User_Male_48px.png"))); // NOI18N
@@ -265,7 +285,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarActionPerformed
         String buscado = "";
         buscado = jTFBuscar.getText();
-        mostrarBusqueda(buscado);
+        if(buscado.equals("")){
+            mostrarRegistro();
+        }else{
+            mostrarBusqueda(buscado);
+        }
     }//GEN-LAST:event_jBBuscarActionPerformed
 
     private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
@@ -278,6 +302,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Codigo no Encontrado");
         }
     }//GEN-LAST:event_jBEliminarActionPerformed
+
+    private void jMIMostrarTodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIMostrarTodoActionPerformed
+        mostrarRegistro();
+    }//GEN-LAST:event_jMIMostrarTodoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -323,9 +351,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jBSueldo10;
     private javax.swing.JMenuItem jMAgregarDepto;
     private javax.swing.JMenuItem jMCerrar;
+    private javax.swing.JMenuItem jMIMostrarTodo;
+    private javax.swing.JMenuItem jMRedes;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMenuFiltrar;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTFBuscar;
     private javax.swing.JTable jTRegistro;
