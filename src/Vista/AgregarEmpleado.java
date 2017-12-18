@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import Controlador.Registro;
+
 /**
  *
  * @author Pablo
@@ -15,6 +17,9 @@ public class AgregarEmpleado extends javax.swing.JFrame {
     /**
      * Creates new form Empleado
      */
+    
+    Registro registro = new Registro();
+    
     private AgregarEmpleado() {
         initComponents();
     }
@@ -61,8 +66,10 @@ public class AgregarEmpleado extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jBLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Broom_48px.png"))); // NOI18N
         jBLimpiar.setText("Limpiar");
 
+        jBCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Cancel_48px_1.png"))); // NOI18N
         jBCancelar.setText("Cancelar");
         jBCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,6 +77,7 @@ public class AgregarEmpleado extends javax.swing.JFrame {
             }
         });
 
+        jBAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Plus_48px.png"))); // NOI18N
         jBAgregar.setText("Agregar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -77,13 +85,13 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addComponent(jBLimpiar)
-                .addGap(54, 54, 54)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jBCancelar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jBAgregar)
-                .addGap(40, 40, 40))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,7 +101,7 @@ public class AgregarEmpleado extends javax.swing.JFrame {
                     .addComponent(jBLimpiar)
                     .addComponent(jBCancelar)
                     .addComponent(jBAgregar))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel1.setText("Codigo");
@@ -113,20 +121,6 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         jLabel8.setText("Estado civil");
 
         jLabel9.setText("Departamento");
-
-        jTFCodigo.setText("jTextField1");
-
-        jTFRut.setText("jTextField2");
-
-        jTFNombre.setText("jTextField3");
-
-        jTFApellido.setText("jTextField4");
-
-        jTFCelular.setText("jTextField5");
-
-        jTFEmail.setText("jTextField6");
-
-        jTFSueldo.setText("jTextField7");
 
         jCBEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -149,7 +143,7 @@ public class AgregarEmpleado extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTFSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 59, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()

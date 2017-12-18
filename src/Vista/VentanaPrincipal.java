@@ -5,6 +5,9 @@
  */
 package Vista;
 
+import Controlador.Registro;
+import java.awt.event.WindowEvent;
+
 /**
  *
  * @author Pablo
@@ -14,6 +17,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
+    
+    Registro registro = new Registro();
+    
     private VentanaPrincipal() {
         initComponents();
         this.setVisible(true);
@@ -49,6 +55,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jBBuscar = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMAgregarDepto = new javax.swing.JMenuItem();
+        jMCerrar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,8 +83,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jBAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Add_User_Male_48px.png"))); // NOI18N
+        jBAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAgregarActionPerformed(evt);
+            }
+        });
 
         jBModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Registration_48px.png"))); // NOI18N
+        jBModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBModificarActionPerformed(evt);
+            }
+        });
 
         jBEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Denied_48px.png"))); // NOI18N
 
@@ -132,6 +152,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jMenu1.setText("Menu");
+
+        jMAgregarDepto.setText("Agregar Departamento");
+        jMenu1.add(jMAgregarDepto);
+
+        jMCerrar.setText("Cerrar");
+        jMCerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMCerrarActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMCerrar);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -145,6 +182,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarActionPerformed
+        AgregarEmpleado.getInstance();
+        AgregarEmpleado.getInstance().setVisible(true);
+    }//GEN-LAST:event_jBAgregarActionPerformed
+
+    private void jBModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBModificarActionPerformed
+        ModificarEmpleado.getInstance();
+        ModificarEmpleado.getInstance().setVisible(true);
+    }//GEN-LAST:event_jBModificarActionPerformed
+
+    private void jMCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMCerrarActionPerformed
+        this.dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+    }//GEN-LAST:event_jMCerrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,6 +239,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jBModificar;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JMenuItem jMAgregarDepto;
+    private javax.swing.JMenuItem jMCerrar;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

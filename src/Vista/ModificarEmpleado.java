@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import Controlador.Registro;
+
 /**
  *
  * @author Pablo
@@ -14,6 +16,9 @@ public class ModificarEmpleado extends javax.swing.JFrame {
     /**
      * Creates new form ModificarEmpleado
      */
+    
+    Registro registro = new Registro();
+    
     private ModificarEmpleado() {
         initComponents();
     }
@@ -59,6 +64,7 @@ public class ModificarEmpleado extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        jBCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Cancel_48px_1.png"))); // NOI18N
         jBCancelar.setText("Cancelar");
         jBCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,6 +72,7 @@ public class ModificarEmpleado extends javax.swing.JFrame {
             }
         });
 
+        jBModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Ok_48px_2.png"))); // NOI18N
         jBModificar.setText("Modificar");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -75,9 +82,9 @@ public class ModificarEmpleado extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(79, 79, 79)
                 .addComponent(jBCancelar)
-                .addGap(72, 72, 72)
+                .addGap(18, 18, 18)
                 .addComponent(jBModificar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,7 +93,7 @@ public class ModificarEmpleado extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBCancelar)
                     .addComponent(jBModificar))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel1.setText("Codigo");
@@ -106,20 +113,6 @@ public class ModificarEmpleado extends javax.swing.JFrame {
         jLabel8.setText("Estado civil");
 
         jLabel9.setText("Departamento");
-
-        jTFCodigo.setText("jTextField1");
-
-        jTFRut.setText("jTextField2");
-
-        jTFNombre.setText("jTextField3");
-
-        jTFApellido.setText("jTextField4");
-
-        jTFCelular.setText("jTextField5");
-
-        jTFEmail.setText("jTextField6");
-
-        jTFSueldo.setText("jTextField7");
 
         jCBEstCivil.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -142,7 +135,7 @@ public class ModificarEmpleado extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTFSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 38, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -223,9 +216,7 @@ public class ModificarEmpleado extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
