@@ -7,6 +7,7 @@ package Vista;
 
 import Controlador.Registro;
 import java.awt.event.WindowEvent;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -35,6 +36,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }
         return mainPrincipal;
     }
+    
+    public void mostrarRegistro(){
+        String[] columnas = new String[]{"Codigo","Rut","Nombre","Apellido","Celular","Email","Sueldo","Est. Civil","Departamento"};
+        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
+        modelo.setDataVector(registro.listarTodo(), columnas);
+    }
+    
+    public void mostrarRegistroDepartamento(String depto){
+        String[] columnas = new String[]{"Codigo","Rut","Nombre","Apellido","Celular","Email","Sueldo","Est. Civil","Departamento"};
+        DefaultTableModel modelo = new DefaultTableModel(columnas, 0);
+        modelo.setDataVector(registro.listarByDepto(depto), columnas);
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,7 +62,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTRegistro = new javax.swing.JTable();
         jBAgregar = new javax.swing.JButton();
         jBModificar = new javax.swing.JButton();
         jBEliminar = new javax.swing.JButton();
@@ -64,7 +79,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTRegistro.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -80,7 +95,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTRegistro);
 
         jBAgregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Add_User_Male_48px.png"))); // NOI18N
         jBAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -106,6 +121,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         jBSueldo10.setText("Actualizar:Sueldos+10%");
+        jBSueldo10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSueldo10ActionPerformed(evt);
+            }
+        });
 
         jBBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Find_User_Male_48px.png"))); // NOI18N
 
@@ -206,6 +226,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         registro.eliminarBySueldo("120000");
     }//GEN-LAST:event_jBElim120ActionPerformed
 
+    private void jBSueldo10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSueldo10ActionPerformed
+        registro.modificarTodosSueldos("10");
+    }//GEN-LAST:event_jBSueldo10ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -255,6 +279,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTFBuscar;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTRegistro;
     // End of variables declaration//GEN-END:variables
 }
