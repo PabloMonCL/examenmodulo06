@@ -8,6 +8,7 @@ package Vista;
 import Controlador.Helper;
 import Controlador.Registro;
 import Modelo.Empleado;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -258,7 +259,7 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         if(jCBEstCivil.getItemAt(jCBEstCivil.getSelectedIndex()).equalsIgnoreCase("elija una opcion")){
             estadoCivil = "";
         }else {
-            estadoCivil = jCBEstCivil.getItemAt(jCBEstCivil.getSelectedIndex()).substring(1,1);
+            estadoCivil = jCBEstCivil.getItemAt(jCBEstCivil.getSelectedIndex()).substring(0,1);
         }
         
         if(jCBDepartamento.getItemAt(jCBDepartamento.getSelectedIndex()).equalsIgnoreCase("elija una opcion")){
@@ -273,9 +274,9 @@ public class AgregarEmpleado extends javax.swing.JFrame {
         Helper.validaString("Nombre", jTFNombre.getText(), 3, 50, true);
         Helper.validaString("Apellido", jTFApellido.getText(), 3, 50, true);
         Helper.validaInt("Celular", jTFCelular.getText(), 100000000, 999999999, true);
-        Helper.validaString("Email", jTFEmail.getText(), 3, 50, true);
+        Helper.validaString("Email", jTFEmail.getText(), 6, 50, true);
         Helper.validaInt("Sueldo", jTFSueldo.getText(), 1, 5000000, true);
-        Helper.validaString("Estado Civil", estadoCivil, 1, 30, true);
+        Helper.validaString("Estado Civil", estadoCivil, 1, 2, true);
         Helper.validaString("Departamento", nomDepto, 3, 30, true);
         
         if(Helper.verificaciones()){
@@ -287,10 +288,10 @@ public class AgregarEmpleado extends javax.swing.JFrame {
             empleado.setCelular(Integer.parseInt(jTFCelular.getText()));
             empleado.setEmail(jTFEmail.getText());
             empleado.setSueldoBruto(Integer.parseInt(jTFSueldo.getText()));
-            empleado.setEstCivil(jCBEstCivil.getItemAt(jCBEstCivil.getSelectedIndex()));
-            empleado.setNomDepto(jCBDepartamento.getItemAt(jCBDepartamento.getSelectedIndex()));
-
+            empleado.setEstCivil(estadoCivil);
+            empleado.setNomDepto(nomDepto);
             registro.agregarEmpleado(empleado);
+            JOptionPane.showMessageDialog(this, "Empleado Agregado");
         }
         
         
