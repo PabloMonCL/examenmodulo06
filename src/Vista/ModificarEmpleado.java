@@ -5,8 +5,10 @@
  */
 package Vista;
 
+import Controlador.Helper;
 import Controlador.Registro;
 import Modelo.Empleado;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -97,6 +99,11 @@ public class ModificarEmpleado extends javax.swing.JFrame {
 
         jBModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Ok_48px_2.png"))); // NOI18N
         jBModificar.setText("Modificar");
+        jBModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBModificarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -254,6 +261,51 @@ public class ModificarEmpleado extends javax.swing.JFrame {
         this.dispose();
         ventana = null;
     }//GEN-LAST:event_jBCancelarActionPerformed
+
+    private void jBModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBModificarActionPerformed
+        String estadoCivil = "", nomDepto = "";
+        if (jCBEstCivil.getItemAt(jCBEstCivil.getSelectedIndex()).equalsIgnoreCase("elija una opcion")) {
+            estadoCivil = "";
+        } else {
+            estadoCivil = jCBEstCivil.getItemAt(jCBEstCivil.getSelectedIndex()).substring(0, 1);
+        }
+
+        if (jCBDepartamento.getItemAt(jCBDepartamento.getSelectedIndex()).equalsIgnoreCase("elija una opcion")) {
+            nomDepto = "";
+        } else {
+            nomDepto = jCBDepartamento.getItemAt(jCBDepartamento.getSelectedIndex());
+        }
+
+        Helper.limpiar();
+        Helper.validaInt("Codigo", jTFCodigo.getText(), 1, 99, true);
+        Helper.validaString("Rut", jTFRut.getText(), 3, 9, true);
+        Helper.validaString("Nombre", jTFNombre.getText(), 3, 50, true);
+        Helper.validaString("Apellido", jTFApellido.getText(), 3, 50, true);
+        Helper.validaInt("Celular", jTFCelular.getText(), 100000000, 999999999, true);
+        Helper.validaString("Email", jTFEmail.getText(), 6, 50, true);
+        Helper.validaInt("Sueldo", jTFSueldo.getText(), 1, 5000000, true);
+        Helper.validaString("Estado Civil", estadoCivil, 1, 2, true);
+        Helper.validaString("Departamento", nomDepto, 3, 30, true);
+
+        if (Helper.verificaciones()) {
+            Empleado empleado = new Empleado();
+            empleado.setCodigo(Integer.parseInt(jTFCodigo.getText()));
+            empleado.setRut(jTFRut.getText());
+            empleado.setNombre(jTFNombre.getText());
+            empleado.setApellido(jTFApellido.getText());
+            empleado.setCelular(Integer.parseInt(jTFCelular.getText()));
+            empleado.setEmail(jTFEmail.getText());
+            empleado.setSueldoBruto(Integer.parseInt(jTFSueldo.getText()));
+            empleado.setEstCivil(estadoCivil);
+            empleado.setNomDepto(nomDepto);
+            if (registro.modificarEmpleado(empleado, jTFCodigo.getText())) {
+                JOptionPane.showMessageDialog(this, "Empleado Modificado");
+            } else {
+                JOptionPane.showMessageDialog(this, "No agregado - Error: codigo duplicado ");
+
+            }
+        }
+    }//GEN-LAST:event_jBModificarActionPerformed
 
     /**
      * @param args the command line arguments
