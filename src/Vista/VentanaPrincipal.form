@@ -183,6 +183,9 @@
               <Image iconType="3" name="/Imagenes/icons8_Denied_48px.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBEliminarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jBElim120">
           <Properties>
