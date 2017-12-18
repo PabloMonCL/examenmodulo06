@@ -25,6 +25,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Redes"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMRedesActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMInformatica">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Informatica"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMInformaticaActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

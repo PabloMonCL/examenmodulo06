@@ -74,6 +74,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMIMostrarTodo = new javax.swing.JMenuItem();
         jMenuFiltrar = new javax.swing.JMenu();
         jMRedes = new javax.swing.JMenuItem();
+        jMInformatica = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTRegistro = new javax.swing.JTable();
@@ -100,7 +101,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuFiltrar.setText("Filtrar");
 
         jMRedes.setText("Redes");
+        jMRedes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMRedesActionPerformed(evt);
+            }
+        });
         jMenuFiltrar.add(jMRedes);
+
+        jMInformatica.setText("Informatica");
+        jMInformatica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMInformaticaActionPerformed(evt);
+            }
+        });
+        jMenuFiltrar.add(jMInformatica);
 
         jPopupMenu1.add(jMenuFiltrar);
 
@@ -308,6 +322,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         mostrarRegistro();
     }//GEN-LAST:event_jMIMostrarTodoActionPerformed
 
+    private void jMRedesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMRedesActionPerformed
+        mostrarRegistroDepartamento("Redes");
+    }//GEN-LAST:event_jMRedesActionPerformed
+
+    private void jMInformaticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMInformaticaActionPerformed
+        mostrarRegistroDepartamento("Informatica");
+    }//GEN-LAST:event_jMInformaticaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -353,6 +375,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMAgregarDepto;
     private javax.swing.JMenuItem jMCerrar;
     private javax.swing.JMenuItem jMIMostrarTodo;
+    private javax.swing.JMenuItem jMInformatica;
     private javax.swing.JMenuItem jMRedes;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
