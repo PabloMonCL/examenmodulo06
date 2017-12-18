@@ -7,6 +7,7 @@ package Vista;
 
 import Controlador.Registro;
 import java.awt.event.WindowEvent;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -126,6 +127,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         jBEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_Denied_48px.png"))); // NOI18N
+        jBEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEliminarActionPerformed(evt);
+            }
+        });
 
         jBElim120.setText("Borrar:Sueldo=120");
         jBElim120.addActionListener(new java.awt.event.ActionListener() {
@@ -261,6 +267,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         buscado = jTFBuscar.getText();
         mostrarBusqueda(buscado);
     }//GEN-LAST:event_jBBuscarActionPerformed
+
+    private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
+        String codE = JOptionPane.showInputDialog(null, "Ingrese el Codigo a Eliminar");
+        
+        if (registro.eliminarByCodigo(codE)){
+            registro.eliminarByCodigo(codE);
+            JOptionPane.showMessageDialog(null, "Eliminado");
+        }else{
+            JOptionPane.showMessageDialog(null, "Codigo no Encontrado");
+        }
+    }//GEN-LAST:event_jBEliminarActionPerformed
 
     /**
      * @param args the command line arguments
